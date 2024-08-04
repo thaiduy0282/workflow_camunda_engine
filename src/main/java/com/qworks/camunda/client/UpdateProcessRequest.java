@@ -7,15 +7,21 @@ import java.util.Date;
 import java.util.Optional;
 
 @Builder
-public record UpdateProcessHistoryRequest(
+public record UpdateProcessRequest(
+
+        String processInstanceId,
+
+        String nodeId,
+
+        String activityName,
 
         @NotNull
-        ProcessHistoryStatus status,
+        ProcessStatus status,
 
         Optional<Date> startDate,
 
         Optional<Date> endDate,
 
-        Optional<String> description
+        Optional<String> note
 
 ) { }

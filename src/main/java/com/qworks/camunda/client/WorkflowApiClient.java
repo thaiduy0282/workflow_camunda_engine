@@ -10,15 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(
         name = "workflows",
         url = "${spring.cloud.openfeign.client.config.workflows.url}",
-        path = "/v1/processHistory",
+        path = "/v1/process",
         configuration = FeignClientConfiguration.class
 )
 public interface WorkflowApiClient {
 
-//    @PostMapping
-//    ResponseEntity<ProcessHistoryDto> createProcessHistory(@RequestBody CreateProcessHistoryRequest request);
-
     @PatchMapping
-    ResponseEntity<ProcessHistoryDto> updateProcessHistory(@RequestBody UpdateProcessHistoryRequest request, @RequestParam(name = "activityId") String activityId);
+    ResponseEntity<ProcessDto> updateProcessHistory(@RequestBody UpdateProcessRequest request);
 
 }
