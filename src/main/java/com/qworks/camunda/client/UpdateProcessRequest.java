@@ -18,9 +18,9 @@ public record UpdateProcessRequest(
         @NotNull
         ProcessStatus status,
 
-        Optional<Date> startDate,
+        Optional<Date> startTime,
 
-        Optional<Date> endDate,
+        Optional<Date> endTime,
 
         Optional<String> note
 
